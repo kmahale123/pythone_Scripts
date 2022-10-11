@@ -1,0 +1,125 @@
+*/
+Multilevel:
+
+WAP to crate three class, one class implemet the prime no prcess , 
+second class implement the swapping of two no, 
+third class imepelment the find out the average of student marks.
+
+*/
+
+
+
+package Assignment_11_10_Inheritance;
+
+import java.util.Scanner;
+
+public class PrimeNumber
+{
+	static Scanner sc = new Scanner(System.in);
+	public  void prime()
+	{
+		int nu;
+       System.out.println("Enter the number ");
+		nu = sc.nextInt();
+		boolean flag=true;
+		for(int j=2;j<nu;j++) //we take i from 2 because concept of prime number is no divided by itself and 1 so start from 2 
+		{
+		
+		if(nu%j==0)
+		{
+			flag=false;
+			break;	
+		}
+		}
+		if(flag==true)
+		{
+			System.out.println(nu+" is prime");
+			
+		}
+		else
+		{
+			System.out.println(nu+" is Not prime");
+			
+		}
+		
+	}
+
+}
+
+
+
+
+
+
+
+package Assignment_11_10_Inheritance;
+
+public class SwappNumber extends PrimeNumber
+{
+	public void Swap()
+	{
+		int a,b;
+		System.out.println("Enter the two  numbers ");
+		a = sc.nextInt();
+		b=sc.nextInt();
+		System.out.println("Before Swapping a = "+a+" b= "+b); //a=10 b=20
+		a=a+b;   // we take addition of no for getting numbers //  a= 10+20=30
+		b=a-b;  //b=30-20=10
+		a=a-b;    //a=30-10=20
+		System.out.println("After Swapping a = "+a+" b= "+b);
+		
+		
+	}
+
+}
+
+
+/*
+ Multilevel:
+WAP to crate three class, one class implemet the prime no prcess ,
+ second class implement the swapping of two no, third class imepelment
+  the find out the average of student marks.
+ */
+
+package Assignment_11_10_Inheritance;
+import java.util.Scanner;
+
+public class AverageMarks  extends SwappNumber
+{
+	public  void Avg()
+	{			
+			Scanner sc=new Scanner(System.in);
+			int Marks[]=new int[5];
+			for(int i=0;i<5;i++)                 ///size by programmer
+			{
+				System.out.println("Enter marks of Subject = "+(i+1));
+				Marks[i]=sc.nextInt();
+			}
+			int sum=0;
+			for(int i=0;i<5;i++)
+			{
+				sum=sum+Marks[i];
+			}
+			int avg=sum/5;
+			System.out.println("Average of marks = "+avg);
+		}
+		
+	public static void main(String[] args)
+	{
+		AverageMarks am=new AverageMarks();
+		am.prime();
+		am.Swap();
+		am.Avg();
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
