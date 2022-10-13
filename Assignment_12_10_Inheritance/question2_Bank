@@ -20,6 +20,34 @@ public interface Rate_of_interest
 
 
 
+
+package Assignment_12_10_interface;
+
+public class accept implements Rate_of_interest 
+{
+	
+		double p,d;
+	@Override
+	public double CallInterest() 
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void accept1() 
+	{
+		// TODO Auto-generated method stub
+		System.out.print("enter Principle");
+		p=sc.nextDouble();
+		System.out.print("enter Duration");
+		d=sc.nextDouble();
+		
+	}
+
+}
+
+
 package Assignment_12_10_interface;
 
 public class SBI extends accept implements Rate_of_interest
