@@ -1,0 +1,133 @@
+/*
+ First : accept the basic details of student
+Second: Accept thge marks of first sem
+Third: Accept the marks of 2nd Sem
+Fout: Accept the marks for sports
+Fifth: Calculator final Grade and percetage:
+ */
+
+
+
+package Assignment_12_10_hybridInheritance;
+
+import java.util.Scanner;
+
+public class Accept 
+{
+	long rollNo,phoneNo;
+	String name;
+	Scanner sc=new Scanner(System.in);
+	void accept()
+	{
+		System.out.print("Enter roll no");
+		rollNo=sc.nextLong();
+		System.out.print("Enter Phone Number");
+		phoneNo=sc.nextLong();
+		System.out.print("Enter name ");
+		name = sc.next();
+	}
+}
+
+
+package Assignment_12_10_hybridInheritance;
+
+import java.util.Scanner;
+
+public class Sem1 extends Accept
+{
+	int i,sum=0, per=0;
+	int[] arr;
+	int sem1()
+	{	
+		arr = new int[5];
+		System.out.print("enter the  sem1  marks of five subject ");
+		for(i=0;i<5;i++)
+		{
+		arr[i]=sc.nextInt();
+		sum=sum+arr[i];
+		}
+		 per= (sum * 100/ 500);
+	  
+		return per;
+	}
+}
+
+
+package Assignment_12_10_hybridInheritance;
+
+public class Sem2 extends Accept
+{
+	int i,sum=0, per=0;
+	int[] arr;
+	int sem2()
+	{	
+		arr = new int[5];
+		System.out.print("enter the  sem2  marks of five subject ");
+		for(i=0;i<5;i++)
+		{
+		arr[i]=sc.nextInt();
+		sum=sum+arr[i];
+		}
+		 per= (sum * 100/ 500);
+	  
+		return per;
+	}
+}
+
+
+
+
+package Assignment_12_10_hybridInheritance;
+
+public class Sports extends Accept
+{
+	int i,sum=0, per=0;
+	int[] arr;
+	int sports()
+	{	
+		arr = new int[3];
+		System.out.print("enter the  sports  marks of three subject ");
+		for(i=0;i<3;i++)
+		{
+		arr[i]=sc.nextInt();
+		sum=sum+arr[i];
+		}
+		 per= (sum * 100/ 300);
+	  
+		return per;
+	}
+}
+
+
+
+
+package Assignment_12_10_hybridInheritance;
+
+public class Result {
+
+	public static void main(String[] args)
+	{
+	
+		int sum=0,per=0;
+		Sem1 s=new Sem1();
+		s.accept();
+		int a=s.sem1();
+		System.out.println(" percentage of sem1 = "+a+"%");
+		Sem2 s1=new Sem2();
+		int b=s1.sem2();	
+		System.out.println(" percentage of sem2 = "+b+"%");
+		Sports s3=new Sports();
+		int c=s3.sports();
+		System.out.println(" percentage of sport = "+c+"%");
+		
+		sum=a+b+c;
+		 per= (sum * 100/ 300);
+		System.out.println("final per of student = "+per+"%");
+		 
+		
+		
+		
+		
+	}
+
+}
