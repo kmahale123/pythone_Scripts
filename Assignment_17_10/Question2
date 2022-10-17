@@ -48,6 +48,7 @@ public class Diff extends abstr
 		Emp_info obj2=new Emp_info();
 		obj2.accept();
 		calSalry();
+		obj2.display();
 		
 		
 
