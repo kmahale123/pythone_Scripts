@@ -1,0 +1,56 @@
+
+/*
+ WAP to to do the following process by using abstract class:
+
+1 abstract class:(Gross, total ,Net)
+
+Diff class : which will display the Employee detilas and Final Salary in hand amount .
+ */
+
+
+package Assignment_17_10_Abstraction;
+
+import java.util.Scanner;
+
+public abstract class abstr 
+{
+	public static void calSalry()
+	{
+		 double gs,it,pt,pf,netSalary;
+		    Scanner sc=new Scanner(System.in);
+		    System.out.println("enter Gross salary");
+	                   gs=sc.nextDouble();
+		    System.out.println("enter Income Tax %");
+	                   it=sc.nextDouble();
+		    System.out.println("enter Professional Tax %");
+	                   pt=sc.nextDouble();
+		     System.out.println("enter Provident Fund %");
+		pf=sc.nextDouble();
+		     pf=pf*(gs/100);   //find the how much pf  
+		     it=it*(gs/100);   //find the how much Income Tax  
+		     pt=pt*(gs/100);   //find the how much Provident Fund  
+		     netSalary=gs-it-pt-pf;
+		     System.out.println("Net Salary is="+netSalary);
+	                   }
+	}
+  
+  
+  
+  
+  
+  package Assignment_17_10_Abstraction;
+
+public class Diff extends abstr
+{
+
+	public static void main(String[] args) 
+	{
+		Emp_info obj2=new Emp_info();
+		obj2.accept();
+		calSalry();
+		
+		
+
+	}
+
+}
