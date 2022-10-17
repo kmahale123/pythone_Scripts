@@ -49,6 +49,20 @@ public class Basic_Info implements main
 		DOB=sc.nextDouble();
 		
 	}
+	void display()
+	{
+		System.out.println("Employee Id = "+Emp_id);
+		
+		System.out.println("Enter the Department = "+dep);
+	
+		System.out.println("Enter the Designation = "+des);
+	
+		System.out.println("Enter the Location = "+location);
+	
+		System.out.println("Enter the salary = "+salary);
+		
+	}
+
 
 }
 
@@ -96,6 +110,7 @@ public class Diff
 		obj1.accept();
 		Emp_info obj2=new Emp_info();
 		obj2.accept();
+		obj2.display();
 	
 		
 		
