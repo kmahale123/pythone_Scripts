@@ -1,0 +1,42 @@
+
+/*
+ do the program for greater numberand call the garbage collection manually using System.gc
+ */
+
+package wrapperClass;
+
+import java.util.Scanner;
+
+public class demo
+{
+	public void finalize()
+	{
+		System.out.println("here my gc method is call");
+	}
+
+	public static void main(String[] args) 
+	{
+		demo obj =new demo();
+		obj.greater_no();
+	    obj=null;
+		System.gc();
+	}
+	
+	public static void greater_no()
+	{
+		Scanner sc=new Scanner(System.in);
+		int a,b;
+		System.out.println("enter two value");
+		a=sc.nextInt();
+		b=sc.nextInt();
+		if(a>b)
+		{
+			System.out.println(a+ " is greater");
+		}
+		else
+		{
+			System.out.println(b+ " is greater ");
+		}
+	}
+
+}
