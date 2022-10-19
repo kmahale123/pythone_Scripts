@@ -1,0 +1,57 @@
+
+
+/*
+ in Boxing check number is  postive or negative and in  unboxing check  number is divisble by 3 or not
+ */
+
+package Boxing_unboxing;
+
+import java.util.Scanner;
+
+public class demo {
+
+	public static void main(String[] args) 
+	{
+		Boxing_Check_no();
+		UnBoxing_Div_by_3();
+
+	}
+	static void Boxing_Check_no()
+	{
+		Scanner sc=new Scanner(System.in);
+		int num;
+		System.out.println("enter the number for Boxing");
+		num=sc.nextInt();
+		System.out.println("The number is ="+num);
+		Integer int1=new Integer(num); 
+		System.out.println("The value after using Integer wrapper class ="+int1);
+		if(int1>0)
+		{
+			System.out.println("number is positive = "+int1);
+		}
+		else
+		{
+			System.out.println("number is negetive = "+int1);
+		}
+	}
+      
+	static void UnBoxing_Div_by_3()
+	{
+		Scanner sc=new Scanner(System.in);
+		int num;
+		System.out.println("enter the number for Boxing");
+		Integer int2=sc.nextInt();
+		System.out.println("The value  using Integer wrapper class ="+int2);
+		num= int2;
+		System.out.println("The number after unboxing ="+num);
+		
+		if(num%3==0)
+		{
+			System.out.println(num + "  is divisiable by 3 ");
+		}
+		else
+		{
+			System.out.println(num + "  is not divisiable by 3 ");
+		}
+	}
+}
