@@ -1,0 +1,65 @@
+/*WAP of Multi-Threading using interface : Display Armstrong number between 1 to 1000
+ * And Prime number from 1 to 100*/
+public class Thread_armstrong implements Runnable
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Thread_armstrong ob1 = new Thread_armstrong();
+		Thread_prime ob2 = new Thread_prime();
+		Thread t1 = new Thread(ob1);
+		t1.start();
+		Thread t2 = new Thread(ob2);
+		t2.start();
+	}
+
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		int n, count = 0, a, b, c, sum = 0;
+		System.out.print("Armstrong numbers from 1 to 1000:");
+		for (int i = 1; i <= 1000; i++) {
+			n = i;
+			while (n > 0) {
+				b = n % 10;
+				sum = sum + (b * b * b);
+				n = n / 10;
+			}
+			if (sum == i) {
+				System.out.print(i + " ");
+			}
+			sum = 0;
+		}
+	}
+
+}
+
+
+public class Thread_prime implements Runnable
+{
+@Override
+public void run() {
+	// TODO Auto-generated method stub
+	int i = 0;
+	int num = 0;
+	// Empty String
+	String primeNumbers = "";
+
+	for (i = 1; i <= 100; i++) {
+		int counter = 0;
+		for (num = i; num >= 1; num--) {
+			if (i % num == 0) {
+				counter = counter + 1;
+			}
+		}
+		if (counter == 2) {
+			// Appended the Prime number to the String
+			primeNumbers = primeNumbers + i + " ";
+		}
+	}
+	System.out.println("Prime numbers from 1 to 100 are :");
+	System.out.println(primeNumbers);
+	}
+}
