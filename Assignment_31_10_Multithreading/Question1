@@ -1,0 +1,27 @@
+/*WAP for thread using Thread class and display the Fibonacci series */
+public class Thread_fibo extends Thread
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Thread_fibo ob=new Thread_fibo();
+		ob.start();
+		Thread_fibo ob1=new Thread_fibo();
+		ob1.start();
+		}
+		public void run() {
+			int n = 50, firstTerm = 0, secondTerm = 1;
+		    System.out.println("Fibonacci Series till " + n + " terms:");
+
+		    for (int i = 1; i <= n; ++i) {
+		      System.out.print(firstTerm + ", ");
+
+		      // compute the next term
+		      int nextTerm = firstTerm + secondTerm;
+		      firstTerm = secondTerm;
+		      secondTerm = nextTerm;
+		    }
+	}
+
+}
