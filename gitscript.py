@@ -3,8 +3,7 @@ import os
 import sys
 
 def is_git_repo():
-    """Check if the current directory is a Git repository"""
-    return subprocess.run("git rev-parse --is-inside-work-tree", shell=True, capture_output=True).returncode == 0
+    return subprocess.run("git rev-parse --is-inside-work-tree", cwd=os.path.dirname(__file__), shell=True, capture_output=True).returncode == 0
 
 def run_command(command):
     """Run a shell command and print output/errors"""
