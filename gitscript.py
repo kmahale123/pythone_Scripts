@@ -1,6 +1,6 @@
 import subprocess
 import os
-import sys
+import sys 
 
 def is_git_repo():
     return subprocess.run("git rev-parse --is-inside-work-tree", cwd=os.path.dirname(__file__), shell=True, capture_output=True).returncode == 0
